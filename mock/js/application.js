@@ -1,5 +1,6 @@
 $(document).ready(function () {
    displayOpening();
+   nextDay();
 });
 
 displayOpening = function() {
@@ -20,5 +21,10 @@ displayOpening = function() {
         "left":"0px"
       });
     })
-}
+};
 
+nextDay = function() {
+    $("#nextDay").click(function() {
+        $(".mdl-grid").children(".day-card").not(".animated").first().addClass("animated flipInY");
+    });
+};
