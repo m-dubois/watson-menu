@@ -6,6 +6,15 @@ import router from './router'
 
 Vue.config.productionTip = false
 
+// Filters
+Vue.filter('to-uppercase', function (value) {
+  return value.toUpperCase()
+})
+Vue.filter('to-date', function (value) {
+  let dt = new Date(value)
+  return (('0' + dt.getDate()).slice(-2)) + '/' + (('0' + (dt.getMonth() + 1)).slice(-2)) + '/' + (dt.getFullYear())
+})
+
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
