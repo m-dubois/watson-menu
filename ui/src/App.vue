@@ -9,6 +9,7 @@
       <span class="mdl-layout-title">Watson Menu</span>
       <nav class="mdl-navigation">
         <router-link class="mdl-navigation__link" to="/" @click.native="hideMenu">Home</router-link>
+        <router-link class="mdl-navigation__link" to="/add" @click.native="hideMenu">Add Menu</router-link>
         <router-link class="mdl-navigation__link" to="/day" @click.native="hideMenu">Day View</router-link>
         <router-link class="mdl-navigation__link" to="/week" @click.native="hideMenu">Week View</router-link>
       </nav>
