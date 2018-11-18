@@ -11,3 +11,6 @@ test/unit/coverage
 *.ntvs*
 *.njsproj
 *.sln
+
+node/
+public/

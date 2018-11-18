@@ -4,7 +4,9 @@
       <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link>
     </div>
-    <router-view/>
+    <transition name="slide-fade">
+      <router-view/>
+    </transition>
   </div>
 </template>
 
@@ -27,5 +29,18 @@
 
 #nav a.router-link-exact-active {
   color: #42b983;
+}
+.slide-fade-enter-active {
+  transition: all .3s ease;
+}
+.slide-fade-leave-active {
+  transition: all .3s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+}
+.slide-fade-enter {
+  transition: all .3s ease;
+  opacity: 0;
+}
+.slide-fade-leave-to {
+  transform: translateX(100px);
 }
 </style>
