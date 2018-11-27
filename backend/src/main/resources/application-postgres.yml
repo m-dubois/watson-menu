@@ -1,0 +1,16 @@
+
+spring:
+
+  datasource:
+    spring:
+      datasource:
+        url: jdbc:postgresql://localhost/watson-menu
+        username: postgres
+        password: mysecretpassword
+        driver-class-name: org.postgresql.Driver
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQL9Dialect
+    properties:
+      hibernate:
+        temp:
+          use_jdbc_metadata_defaults: false

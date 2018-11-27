@@ -1,0 +1,27 @@
+
+spring:
+
+  application:
+    name: watson-menu
+
+  profiles:
+    active: @spring.profiles.active@
+
+  h2:
+    console:
+      enabled: false
+
+logging:
+  level:
+    root: info
+
+liquibase:
+  change-log: classpath:/db/changelog/db.changelog-master.yaml
+  check-change-log-location: true # check the change log location exists
+  contexts:  # runtime contexts to use
+  default-schema:  # default database schema to use
+  drop-first: false
+  enabled: true
+  url:  # specific JDBC url (if not set the default datasource is used)
+  user:  # user name for url
+  liquibase.password:  # password for liquibase.url

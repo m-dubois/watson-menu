@@ -39,3 +39,19 @@ docker run -it --rm --link watson-menu-psql:postgres postgres psql -h postgres -
 ```
 
 password: mysecretpassword
+
+## Application
+
+### Start the application
+
+```
+mvn
+```
+
+(will launch the default H2 profile)
+
+To launch with postgres:
+
+```
+mvn -Ppostgres
+```
