@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <HelloWorld msg="Welcome to Watson Menu"/>
 
       <div>
           <button class=”Search__button” @click="callRestService()">CALL Spring Boot REST backend service</button>
@@ -25,7 +25,7 @@ export default {
 
 data (){
   return {
-    response: [],
+    response: null,
     errors: []
   }
 },
