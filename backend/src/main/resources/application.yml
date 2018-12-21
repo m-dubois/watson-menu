@@ -11,6 +11,9 @@ spring:
     console:
       enabled: false
 
+server:
+  port : 8080
+
 logging:
   level:
     root: info
