@@ -37,6 +37,7 @@ methods: {
           this.response = response.data
         })
         .catch(e => {
+          this.response = 'An error occurred. Sorry :('
           this.errors.push(e)
           console.log(e);
         })
