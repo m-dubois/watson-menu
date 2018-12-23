@@ -2,9 +2,7 @@ package org.matt.watson.backend.controller;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController()
 @RequestMapping("/api")
@@ -16,8 +14,15 @@ public class BackendController {
 
     @RequestMapping(path = "/hello")
     public @ResponseBody
-    String sayHello() {
-        LOG.info("GET called on /hello resource");
+    String sayHello(
+            @RequestParam(value = "delay", required = false) Integer delay) {
+
+        LOG.info("GET called on /hello resource with delay {}", delay);
+        if (delay != null) {
+            try {
+                Thread.sleep(delay * 1000);
+            } catch (InterruptedException e) {}
+        }
         return HELLO_TEXT;
     }
 
