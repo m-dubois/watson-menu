@@ -17,6 +17,7 @@ server:
 logging:
   level:
     root: info
+    org.matt.watson.backend.infra.rest.MenuController: debug
 
 liquibase:
   change-log: classpath:/db/changelog/db.changelog-master.yaml

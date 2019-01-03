@@ -1,4 +1,4 @@
-package org.matt.watson.backend.controller;
+package org.matt.watson.backend.infra.rest;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.Before;
