@@ -1,8 +1,8 @@
 package org.matt.watson.backend.controller;
 
-import org.matt.watson.backend.domain.Starter;
+import org.matt.watson.backend.domain.model.Starter;
 import org.matt.watson.backend.exceptions.NonExistingStarterException;
-import org.matt.watson.backend.repository.StarterRepository;
+import org.matt.watson.backend.infra.repository.StarterRepositoryImpl;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,11 +17,11 @@ public class StarterController {
 
     private static final Logger LOG = LoggerFactory.getLogger(StarterController.class);
 
-    private final StarterRepository starterRepository;
+    private final StarterRepositoryImpl starterRepository;
 
     @Autowired
-    public StarterController(StarterRepository superHeroRepository) {
-        this.starterRepository = superHeroRepository;
+    public StarterController(StarterRepositoryImpl starterRepository) {
+        this.starterRepository = starterRepository;
     }
 
     @GetMapping("/{id}")

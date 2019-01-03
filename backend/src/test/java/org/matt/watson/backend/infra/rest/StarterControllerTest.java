@@ -4,8 +4,8 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.matt.watson.backend.domain.Starter;
-import org.matt.watson.backend.repository.StarterRepository;
+import org.matt.watson.backend.domain.model.Starter;
+import org.matt.watson.backend.infra.repository.StarterRepositoryImpl;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.MockitoJUnitRunner;
@@ -28,7 +28,7 @@ public class StarterControllerTest {
     private MockMvc mvc;
 
     @Mock
-    private StarterRepository starterRepository;
+    private StarterRepositoryImpl starterRepository;
 
     @InjectMocks
     private StarterController starterController;
@@ -44,7 +44,7 @@ public class StarterControllerTest {
         JacksonTester.initFields(this, new ObjectMapper());
         // MockMvc standalone approach
         mvc = MockMvcBuilders.standaloneSetup(starterController)
-                .setControllerAdvice(new StarterExceptionHandler())
+                .setControllerAdvice(new RestExceptionHandler())
                 .addFilters(new StarterFilter())
                 .build();
     }
