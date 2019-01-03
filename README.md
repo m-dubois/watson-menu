@@ -16,6 +16,15 @@ Run the complete Spring Boot App:
 mvn --projects backend spring-boot:run
 ```
 
+or with options for intellij remote debugging:
+
+```
+mvn --projects backend spring-boot:run -Dspring-boot.run.jvmArguments="-Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=y,address=5005"
+```
+
+(and launching remote debugging in intellij of course :P)
+
+
 ## Browsing app
 
 [http://localhost:8088/](http://localhost:8088/)

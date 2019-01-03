@@ -55,3 +55,11 @@ To launch with postgres:
 ```
 mvn -Ppostgres
 ```
+
+## Feeding the beast
+
+Adding a menu via the REST API
+
+```
+curl -i -X POST -H "Content-Type:application/json" http://localhost:8080/menus -d '{"day":"2018-12-13"}'
+```
