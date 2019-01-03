@@ -1,4 +1,4 @@
-package org.matt.watson.backend.domain;
+package org.matt.watson.backend.domain.model;
 
 public class MainCourse {
 }
