@@ -1,4 +1,4 @@
-package org.matt.watson.backend.controller;
+package org.matt.watson.backend.infra.rest;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

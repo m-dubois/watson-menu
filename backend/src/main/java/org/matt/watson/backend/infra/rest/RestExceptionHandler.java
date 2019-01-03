@@ -1,4 +1,4 @@
-package org.matt.watson.backend.controller;
+package org.matt.watson.backend.infra.rest;
 
 import org.matt.watson.backend.exceptions.NonExistingMenuException;
 import org.matt.watson.backend.exceptions.NonExistingStarterException;

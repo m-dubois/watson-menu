@@ -1,4 +1,4 @@
 package org.matt.watson.backend.infra.service;
 
-public class MenuNotFoundException {
+public class MenuNotFoundException extends RuntimeException {
 }
