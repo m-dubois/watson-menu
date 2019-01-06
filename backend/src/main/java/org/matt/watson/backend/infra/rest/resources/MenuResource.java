@@ -12,6 +12,7 @@ public class MenuResource {
     @JsonFormat(pattern = Constants.DATE_PATTERN, timezone = Constants.TIMEZONE, locale = Constants.LOCALE)
     private Date day;
     private String dayOfWeek;
+    private MealResource mealResource;
 
     public MenuResource() {
         super();
@@ -41,12 +42,21 @@ public class MenuResource {
         this.dayOfWeek = dayOfWeek;
     }
 
+    public MealResource getMealResource() {
+        return mealResource;
+    }
+
+    public void setMealResource(MealResource mealResource) {
+        this.mealResource = mealResource;
+    }
+
     @Override
     public String toString() {
         return "MenuResource{" +
                 "id=" + id +
                 ", day=" + day +
                 ", dayOfWeek='" + dayOfWeek + '\'' +
+                ", mealResource=" + mealResource +
                 '}';
     }
 

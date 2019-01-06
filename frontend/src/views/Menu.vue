@@ -62,7 +62,7 @@ export default {
       })
       .catch(error => {
         this.response = "An error occurred. Sorry :(";
-        this.errors.push(e)
+        this.errors.push(error);
         console.log(error);
       })
       .finally(() => (this.loading = false));

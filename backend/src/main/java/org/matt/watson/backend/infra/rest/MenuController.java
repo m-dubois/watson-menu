@@ -4,7 +4,7 @@ import org.matt.watson.backend.domain.model.Menu;
 import org.matt.watson.backend.domain.service.MenuService;
 import org.matt.watson.backend.exceptions.NonExistingMenuException;
 import org.matt.watson.backend.infra.rest.mappers.MenuResourceMapper;
-import org.matt.watson.backend.infra.rest.resources.MenuResource;
+import org.matt.watson.backend.infra.rest.resources.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -46,6 +46,17 @@ public class MenuController {
         LOG.debug("parsed day string: {} -- parsed day: {} -- day of week: {}", dayString, day, dayOfWeek);
         Menu menu = this.menuService.findByDay(day).orElseThrow(NonExistingMenuException::new);
         MenuResource menuResource = MenuResourceMapper.mapMenuToMenuResource(menu);
+
+        MealResource mealResource = new MealResourceBuilder()
+                .setStarter(new StarterResource("Salade de chou rouge râpé"))
+                .setMainCourse(new MainCourseResource("Omelette aux fines herbes, épinards à la crème, riz"))
+                .setDessert(new DessertResource("Petits suisses avec miel de citronnier"))
+                .createMealResource();
+
+        menuResource.setMealResource(mealResource);
+
+        LOG.info("menuResource: {}", menuResource);
+
         return menuResource;
     }
 

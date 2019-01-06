@@ -63,3 +63,12 @@ Adding a menu via the REST API
 ```
 curl -i -X POST -H "Content-Type:application/json" http://localhost:8080/menus -d '{"day":"2018-12-13"}'
 ```
+
+## Misc
+
+Some useful URLs
+
+```
+http://localhost:8080/menus?day=2018-12-31
+http://localhost:8080/h2-console/
+```
