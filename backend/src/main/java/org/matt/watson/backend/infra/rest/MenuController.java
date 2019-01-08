@@ -47,11 +47,11 @@ public class MenuController {
         Menu menu = this.menuService.findByDay(day).orElseThrow(NonExistingMenuException::new);
         MenuResource menuResource = MenuResourceMapper.mapMenuToMenuResource(menu);
 
-        MealResource mealResource = new MealResourceBuilder()
-                .setStarter(new StarterResource("Salade de chou rouge râpé"))
-                .setMainCourse(new MainCourseResource("Omelette aux fines herbes, épinards à la crème, riz"))
-                .setDessert(new DessertResource("Petits suisses avec miel de citronnier"))
-                .createMealResource();
+        MealResource mealResource = MealResource.builder()
+                .starter(new StarterResource("Salade de chou rouge râpé"))
+                .mainCourse(new MainCourseResource("Omelette aux fines herbes, épinards à la crème, riz"))
+                .dessert(new DessertResource("Petits suisses avec miel de citronnier"))
+                .build();
 
         menuResource.setMealResource(mealResource);
 
@@ -59,7 +59,6 @@ public class MenuController {
 
         return menuResource;
     }
-
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)

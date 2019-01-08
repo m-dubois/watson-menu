@@ -1,19 +1,9 @@
 package org.matt.watson.backend.infra.rest.resources;
 
+import lombok.Data;
+import lombok.NonNull;
+
+@Data
 public class MainCourseResource {
-
-    private String name;
-
-    public MainCourseResource(String name) {
-        super();
-        this.name = name;
-    }
-
-    public String getName() {
-        return this.name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
+    @NonNull private String name;
 }

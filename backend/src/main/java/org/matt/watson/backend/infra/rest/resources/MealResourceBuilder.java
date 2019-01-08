@@ -1,5 +1,8 @@
 package org.matt.watson.backend.infra.rest.resources;
 
+import lombok.Builder;
+
+@Builder
 public class MealResourceBuilder {
 
     private StarterResource starter;
