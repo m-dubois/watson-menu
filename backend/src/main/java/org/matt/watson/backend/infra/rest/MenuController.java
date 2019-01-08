@@ -45,7 +45,7 @@ public class MenuController {
 
         LOG.debug("parsed day string: {} -- parsed day: {} -- day of week: {}", dayString, day, dayOfWeek);
         Menu menu = this.menuService.findByDay(day).orElseThrow(NonExistingMenuException::new);
-        MenuResource menuResource = MenuResourceMapper.mapMenuToMenuResource(menu);
+        MenuResource menuResource = MenuResourceMapper.INSTANCE.mapMenuToMenuResource(menu);
 
         MealResource mealResource = MealResource.builder()
                 .starter(new StarterResource("Salade de chou rouge râpé"))
@@ -66,7 +66,7 @@ public class MenuController {
 
         LOG.info("addNewMenu({})", menuResource);
 
-        Menu menu = MenuResourceMapper.mapMenuResourceToMenu(menuResource);
+        Menu menu = MenuResourceMapper.INSTANCE.mapMenuResourceToMenu(menuResource);
         this.menuService.createMenu(menu);
     }
 
