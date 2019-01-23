@@ -9,7 +9,7 @@ public class MenuEntityMapper {
 
     public static MenuEntity mapMenuToMenuEntity(Menu menu){
         MenuEntity menuEntity = new MenuEntity();
-        menuEntity.setId(menu.getId());
+        //menuEntity.setId(menu.getId());
         menuEntity.setDay(menu.getDay());
 
         return menuEntity;

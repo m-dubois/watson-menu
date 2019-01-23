@@ -5,7 +5,8 @@ import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.matt.watson.backend.domain.model.Starter;
-import org.matt.watson.backend.infra.repository.StarterRepositoryImpl;
+import org.matt.watson.backend.domain.repository.StarterRepository;
+import org.matt.watson.backend.infra.repository.StarterEntity;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.MockitoJUnitRunner;
@@ -28,7 +29,7 @@ public class StarterControllerTest {
     private MockMvc mvc;
 
     @Mock
-    private StarterRepositoryImpl starterRepository;
+    private StarterRepository starterRepository;
 
     @InjectMocks
     private StarterController starterController;
@@ -52,7 +53,9 @@ public class StarterControllerTest {
     @Test
     public void canRetrieveByIdWhenExists() throws Exception {
         // given
-        given(starterRepository.findById(1L)).willReturn(Optional.of(new Starter("Carottes")));
+        StarterEntity carottes = new StarterEntity();
+        carottes.setName("Carottes");
+        given(starterRepository.findById(1L)).willReturn(Optional.of(carottes));
 
         // when
         MockHttpServletResponse response = mvc.perform(

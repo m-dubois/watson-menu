@@ -1,6 +1,5 @@
 package org.matt.watson.backend.infra.repository;
 
-import org.matt.watson.backend.domain.model.Menu;
 import org.matt.watson.backend.domain.repository.MenuRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;

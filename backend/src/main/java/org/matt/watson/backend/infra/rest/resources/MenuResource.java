@@ -13,6 +13,5 @@ public class MenuResource {
     @JsonFormat(pattern = Constants.DATE_PATTERN, timezone = Constants.TIMEZONE, locale = Constants.LOCALE)
     private Date day;
     private String dayOfWeek;
-    private MealResource mealResource;
-
+    private MealResource meal;
 }

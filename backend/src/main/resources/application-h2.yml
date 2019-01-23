@@ -16,6 +16,7 @@ spring:
     database: h2
     generate-ddl: false
     platform: org.hibernate.dialect.H2Dialect
+    open-in-view: false
   h2:
     console:
       enabled: true

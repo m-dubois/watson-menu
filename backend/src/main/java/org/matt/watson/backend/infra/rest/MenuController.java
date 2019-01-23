@@ -53,7 +53,7 @@ public class MenuController {
                 .dessert(new DessertResource("Petits suisses avec miel de citronnier"))
                 .build();
 
-        menuResource.setMealResource(mealResource);
+        menuResource.setMeal(mealResource);
 
         LOG.info("menuResource: {}", menuResource);
 

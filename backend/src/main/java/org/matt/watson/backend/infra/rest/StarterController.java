@@ -2,7 +2,9 @@ package org.matt.watson.backend.infra.rest;
 
 import org.matt.watson.backend.domain.model.Starter;
 import org.matt.watson.backend.exceptions.NonExistingStarterException;
-import org.matt.watson.backend.infra.repository.StarterRepositoryImpl;
+import org.matt.watson.backend.infra.rest.mappers.StarterResourceMapper;
+import org.matt.watson.backend.infra.rest.resources.StarterResource;
+import org.matt.watson.backend.service.StarterService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,16 +19,16 @@ public class StarterController {
 
     private static final Logger LOG = LoggerFactory.getLogger(StarterController.class);
 
-    private final StarterRepositoryImpl starterRepository;
+    private final StarterService starterService;
 
     @Autowired
-    public StarterController(StarterRepositoryImpl starterRepository) {
-        this.starterRepository = starterRepository;
+    public StarterController(StarterService starterService) {
+        this.starterService = starterService;
     }
 
     @GetMapping("/{id}")
     public Starter getStarterById(@PathVariable Long id) {
-        return starterRepository.findById(id).orElseThrow(NonExistingStarterException::new);
+        return starterService.getStarter(id).orElseThrow(NonExistingStarterException::new);
     }
 
     @GetMapping
@@ -37,8 +39,12 @@ public class StarterController {
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public void addNewStarter(@RequestBody Starter starter) {
-        this.starterRepository.save(starter);
+    public void addNewStarter(@RequestBody StarterResource starterResource) {
+        LOG.info("addNewStarter({})", starterResource);
+
+        Starter starter = StarterResourceMapper.INSTANCE.mapStarterResourceToStarter(starterResource);
+        this.starterService.createStarter(starter);
+
     }
 
 
