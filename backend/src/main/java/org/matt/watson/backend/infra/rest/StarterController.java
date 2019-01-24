@@ -4,7 +4,7 @@ import org.matt.watson.backend.domain.model.Starter;
 import org.matt.watson.backend.exceptions.NonExistingStarterException;
 import org.matt.watson.backend.infra.rest.mappers.StarterResourceMapper;
 import org.matt.watson.backend.infra.rest.resources.StarterResource;
-import org.matt.watson.backend.service.StarterService;
+import org.matt.watson.backend.domain.service.StarterService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

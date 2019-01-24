@@ -5,7 +5,7 @@ import org.matt.watson.backend.exceptions.NonExistingStarterException;
 import org.matt.watson.backend.infra.repository.StarterEntity;
 import org.matt.watson.backend.infra.repository.StarterEntityMapper;
 import org.matt.watson.backend.infra.repository.StarterRepositoryImpl;
-import org.matt.watson.backend.service.StarterService;
+import org.matt.watson.backend.domain.service.StarterService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

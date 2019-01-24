@@ -1,4 +1,4 @@
-package org.matt.watson.backend.service;
+package org.matt.watson.backend.domain.service;
 
 import org.matt.watson.backend.domain.model.Starter;
 import org.matt.watson.backend.exceptions.NonExistingStarterException;
