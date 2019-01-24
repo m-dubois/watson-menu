@@ -5,7 +5,7 @@ import org.matt.watson.backend.exceptions.NonExistingStarterException;
 
 import java.util.Optional;
 
-public interface StarterService {
+public interface MealService {
 
     Optional<Starter> getStarter(long id) throws NonExistingStarterException;
     void createStarter(Starter starter);

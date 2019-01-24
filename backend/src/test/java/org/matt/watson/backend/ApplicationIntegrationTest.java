@@ -2,7 +2,7 @@ package org.matt.watson.backend;
 
 import org.junit.Before;
 import org.junit.Test;
-import org.matt.watson.backend.domain.service.StarterService;
+import org.matt.watson.backend.domain.service.MealService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.boot.test.web.client.TestRestTemplate;
@@ -17,12 +17,12 @@ public class ApplicationIntegrationTest {
     private TestRestTemplate restTemplate;
 
     @MockBean
-    private StarterService starterService;
+    private MealService mealService;
 
     @Before
     public void setup() {
         /*
-        given(this.starterService.getStarter(ID))
+        given(this.mealService.getStarter(ID))
                 .willReturn(new Starter("Carottes"));
                 */
     }
