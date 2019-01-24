@@ -22,7 +22,7 @@ public class StarterServiceImpl implements StarterService {
         Optional<StarterEntity> starter = starterRepository.findById(id);
 
         if (starter.isPresent()) {
-            Starter menu = StarterEntityMapper.mapStarterEntityToStarter(starter.get());
+            Starter menu = StarterEntityMapper.INSTANCE.mapStarterEntityToStarter(starter.get());
             return Optional.of(menu);
         } else {
             return Optional.empty();
@@ -31,7 +31,7 @@ public class StarterServiceImpl implements StarterService {
 
     public void createStarter(Starter starter) {
 
-        StarterEntity starterEntity = StarterEntityMapper.mapStarterToStarterEntity(starter);
+        StarterEntity starterEntity = StarterEntityMapper.INSTANCE.mapStarterToStarterEntity(starter);
         starterRepository.save(starterEntity);
 
     }
