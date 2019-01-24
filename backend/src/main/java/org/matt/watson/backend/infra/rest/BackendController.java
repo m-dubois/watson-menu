@@ -1,11 +1,13 @@
 package org.matt.watson.backend.infra.rest;
 
+import io.swagger.annotations.Api;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.*;
 
 @RestController()
 @RequestMapping("/api")
+@Api(value="/api",description="Test API",produces ="application/json")
 public class BackendController {
 
     private static final Logger LOG = LoggerFactory.getLogger(BackendController.class);

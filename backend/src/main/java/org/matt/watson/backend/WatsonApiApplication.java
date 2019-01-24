@@ -7,8 +7,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
 public class WatsonApiApplication {
+
     private static final Logger LOG = LoggerFactory.getLogger(WatsonApiApplication.class);
+
     public static void main(String[] args) {
-		SpringApplication.run(WatsonApiApplication.class, args);
-	}
+        SpringApplication.run(WatsonApiApplication.class, args);
+    }
 }
