@@ -3,6 +3,7 @@ package org.matt.watson.backend.infra.rest;
 import org.matt.watson.backend.domain.model.Starter;
 import org.matt.watson.backend.domain.service.MealService;
 import org.matt.watson.backend.exceptions.NonExistingStarterException;
+import org.matt.watson.backend.exceptions.NotImplementedException;
 import org.matt.watson.backend.infra.rest.mappers.StarterResourceMapper;
 import org.matt.watson.backend.infra.rest.resources.StarterResource;
 import org.slf4j.Logger;
@@ -33,8 +34,7 @@ public class StarterController {
 
     @GetMapping
     public Optional<Starter> getStarterByName(@RequestParam("name") String name) {
-        //return starterRepository.getStarter(name);
-        throw new NonExistingStarterException();
+        throw new NotImplementedException();
     }
 
     @PostMapping
