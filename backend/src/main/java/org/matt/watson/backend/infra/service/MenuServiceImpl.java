@@ -22,7 +22,7 @@ public class MenuServiceImpl implements MenuService {
         Optional<MenuEntity> menuByDay = menuRepository.findByDay(day);
 
         if (menuByDay.isPresent()) {
-            Menu menu = MenuEntityMapper.mapMenuEntityToMenu(menuByDay.get());
+            Menu menu = MenuEntityMapper.INSTANCE.mapMenuEntityToMenu(menuByDay.get());
             return Optional.of(menu);
         } else {
             return Optional.empty();
@@ -32,7 +32,7 @@ public class MenuServiceImpl implements MenuService {
     @Override
     public void createMenu(Menu menu) {
 
-        MenuEntity menuEntity = MenuEntityMapper.mapMenuToMenuEntity(menu);
+        MenuEntity menuEntity = MenuEntityMapper.INSTANCE.mapMenuToMenuEntity(menu);
         menuRepository.save(menuEntity);
 
     }
