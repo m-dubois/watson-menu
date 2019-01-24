@@ -32,11 +32,15 @@
             </column>
         </createTable>
 
+        <loadData file="db/starters.csv" tableName="starter"/>
+
         <addForeignKeyConstraint baseColumnNames="starter_id"
                                  baseTableName="menu"
                                  constraintName="fk_starter_id"
                                  referencedColumnNames="id"
                                  referencedTableName="starter"/>
+
+        <loadData file="db/menus.csv" tableName="menu"/>
 
     </changeSet>
 </databaseChangeLog>
