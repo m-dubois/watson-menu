@@ -32,5 +32,5 @@ public class MenuEntity implements Serializable {
 
     @OneToOne
     @JoinColumn(name = "dessert_id")
-    Dessert dessert;
+    DessertEntity dessert;
 }

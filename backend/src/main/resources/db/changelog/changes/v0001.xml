@@ -21,6 +21,12 @@
             <column name="starter_id" type="bigint">
                 <constraints nullable="false" />
             </column>
+            <column name="main_course_id" type="bigint">
+                <constraints nullable="false" />
+            </column>
+            <column name="dessert_id" type="bigint">
+                <constraints nullable="false" />
+            </column>
         </createTable>
 
         <createTable tableName="starter" remarks="A table to contain all the starters">
@@ -39,6 +45,40 @@
                                  constraintName="fk_starter_id"
                                  referencedColumnNames="id"
                                  referencedTableName="starter"/>
+
+        <createTable tableName="main_course" remarks="A table to contain all the main courses">
+            <column name="id" type="bigint" autoIncrement="true" >
+                <constraints primaryKey="true" nullable="false" />
+            </column>
+            <column name="name" type="varchar(100)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+
+        <loadData file="db/main_courses.csv" tableName="main_course"/>
+
+        <addForeignKeyConstraint baseColumnNames="main_course_id"
+                                 baseTableName="menu"
+                                 constraintName="fk_main_course_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="main_course"/>
+
+        <createTable tableName="dessert" remarks="A table to contain all the desserts">
+            <column name="id" type="bigint" autoIncrement="true" >
+                <constraints primaryKey="true" nullable="false" />
+            </column>
+            <column name="name" type="varchar(100)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+
+        <loadData file="db/desserts.csv" tableName="dessert"/>
+
+        <addForeignKeyConstraint baseColumnNames="dessert_id"
+                                 baseTableName="menu"
+                                 constraintName="fk_dessert_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="dessert"/>
 
         <loadData file="db/menus.csv" tableName="menu"/>
 
