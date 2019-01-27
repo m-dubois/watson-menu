@@ -14,6 +14,9 @@ public class Starter extends Course {
 
     @Override
     public String toString() {
-        return "Starter{}";
+        return "Starter{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                '}';
     }
 }
