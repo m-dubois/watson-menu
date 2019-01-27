@@ -5,6 +5,9 @@ import org.matt.watson.backend.domain.repository.MenuRepository;
 import org.matt.watson.backend.domain.service.MenuService;
 import org.matt.watson.backend.infra.repository.MenuEntity;
 import org.matt.watson.backend.infra.repository.MenuEntityMapper;
+import org.matt.watson.backend.infra.rest.StarterController;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -14,6 +17,8 @@ import java.util.Optional;
 @Service
 public class MenuServiceImpl implements MenuService {
 
+    private static final Logger LOG = LoggerFactory.getLogger(MenuServiceImpl.class);
+
     @Autowired
     private MenuRepository menuRepository;
 
@@ -22,7 +27,9 @@ public class MenuServiceImpl implements MenuService {
         Optional<MenuEntity> menuByDay = menuRepository.findByDay(day);
 
         if (menuByDay.isPresent()) {
+            LOG.debug("menuByDay={}", menuByDay.get());
             Menu menu = MenuEntityMapper.INSTANCE.mapMenuEntityToMenu(menuByDay.get());
+            LOG.debug("menu={}", menu);
             return Optional.of(menu);
         } else {
             return Optional.empty();
