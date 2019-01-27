@@ -45,15 +45,17 @@ public class MenuController {
 
         LOG.debug("parsed day string: {} -- parsed day: {} -- day of week: {}", dayString, day, dayOfWeek);
         Menu menu = this.menuService.findByDay(day).orElseThrow(NonExistingMenuException::new);
+        LOG.debug("menu returned by menuService: {}", menu);
+
         MenuResource menuResource = MenuResourceMapper.INSTANCE.mapMenuToMenuResource(menu);
 
-        MealResource mealResource = MealResource.builder()
-                .starter(new StarterResource("Salade de chou rouge râpé"))
-                .mainCourse(new MainCourseResource("Omelette aux fines herbes, épinards à la crème, riz"))
-                .dessert(new DessertResource("Petits suisses avec miel de citronnier"))
-                .build();
+//        MealResource mealResource = MealResource.builder()
+//                .starter(new StarterResource("Salade de chou rouge râpé"))
+//                .mainCourse(new MainCourseResource("Omelette aux fines herbes, épinards à la crème, riz"))
+//                .dessert(new DessertResource("Petits suisses avec miel de citronnier"))
+//                .build();
 
-        menuResource.setMeal(mealResource);
+//        menuResource.setMeal(mealResource);
 
         LOG.info("menuResource: {}", menuResource);
 
