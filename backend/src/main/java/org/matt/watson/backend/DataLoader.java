@@ -47,12 +47,14 @@ public class DataLoader implements CommandLineRunner {
     @Transactional
     public void run(String... args) throws Exception {
 
-        LOG.info("DataLoader");
+        LOG.info("DataLoader...");
 
+        /*
         StarterEntity starterEntity = addNewStarter("Carottes râpées");
 
         addNewMenu("2014-02-14", starterEntity);
         addNewMenu("2018-12-31", starterEntity);
+        */
 
         LOG.info("{}", menuRepository.findById(1L));
     }
@@ -71,7 +73,7 @@ public class DataLoader implements CommandLineRunner {
         menuEntity.setId(200L);
         menuEntity.setDay(DataLoader.asDate(LocalDate.parse(date)));
 
-        menuEntity.setStarterEntity(starterEntity);
+//        menuEntity.setStarterEntity(starterEntity);
 
 
         LOG.info("{}", menuEntity);
