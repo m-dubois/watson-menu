@@ -1,6 +1,7 @@
 package org.matt.watson.backend.infra.repository;
 
 import lombok.Data;
+import org.matt.watson.backend.domain.model.Dessert;
 import org.matt.watson.backend.domain.model.Starter;
 
 import javax.persistence.*;
@@ -23,5 +24,13 @@ public class MenuEntity implements Serializable {
 
     @OneToOne
     @JoinColumn(name = "starter_id")
-    StarterEntity starterEntity;
+    StarterEntity starter;
+
+    @OneToOne
+    @JoinColumn(name = "main_course_id")
+    MainCourseEntity mainCourse;
+
+    @OneToOne
+    @JoinColumn(name = "dessert_id")
+    Dessert dessert;
 }
