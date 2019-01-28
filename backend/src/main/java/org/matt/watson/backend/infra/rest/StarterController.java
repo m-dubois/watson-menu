@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.Optional;
 
 @RestController()
-@RequestMapping("/starters")
+@RequestMapping("${api.v1}/starters")
 public class StarterController {
 
     private static final Logger LOG = LoggerFactory.getLogger(StarterController.class);

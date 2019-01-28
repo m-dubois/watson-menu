@@ -11,6 +11,9 @@ spring:
     console:
       enabled: false
 
+api:
+  v1: /api/v1
+
 server:
   port : 8080
 

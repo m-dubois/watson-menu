@@ -17,7 +17,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 @RestController()
-@RequestMapping("/menus")
+@RequestMapping("${api.v1}/menus")
 public class MenuController {
 
     private static final Logger LOG = LoggerFactory.getLogger(MenuController.class);
@@ -48,14 +48,6 @@ public class MenuController {
         LOG.debug("menu returned by menuService: {}", menu);
 
         MenuResource menuResource = MenuResourceMapper.INSTANCE.mapMenuToMenuResource(menu);
-
-//        MealResource mealResource = MealResource.builder()
-//                .starter(new StarterResource("Salade de chou rouge râpé"))
-//                .mainCourse(new MainCourseResource("Omelette aux fines herbes, épinards à la crème, riz"))
-//                .dessert(new DessertResource("Petits suisses avec miel de citronnier"))
-//                .build();
-
-//        menuResource.setMeal(mealResource);
 
         LOG.info("menuResource: {}", menuResource);
 

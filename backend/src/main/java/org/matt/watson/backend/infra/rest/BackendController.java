@@ -6,8 +6,8 @@ import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.*;
 
 @RestController()
-@RequestMapping("/api")
-@Api(value="/api",description="Test API",produces ="application/json")
+@RequestMapping("${api.v1}")
+@Api(value="${api.v1}",description="Test API",produces ="application/json")
 public class BackendController {
 
     private static final Logger LOG = LoggerFactory.getLogger(BackendController.class);

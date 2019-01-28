@@ -61,12 +61,13 @@ mvn -Ppostgres
 Adding a menu via the REST API
 
 ```
-curl -i -X POST -H "Content-Type:application/json" http://localhost:8080/menus -d '{"day":"2018-12-13"}'
+curl -i -X POST -H "Content-Type:application/json" http://localhost:8080/api/v1/menus -d '{"day":"2018-12-12"}'
 ```
 
 ## Misc
 
 Some useful URLs
 
-* [http://localhost:8080/menus?day=2018-12-31](http://localhost:8080/menus?day=2018-12-31)
+* [http://localhost:8080/api/v1/menus?day=2018-12-31](http://localhost:8080/api/v1/menus?day=2018-12-31)
+* [http://localhost:8080/api/v1/hello?delay=3](http://localhost:8080/api/v1/hello?delay=3)
 * [http://localhost:8080/h2-console/](http://localhost:8080/h2-console/)
