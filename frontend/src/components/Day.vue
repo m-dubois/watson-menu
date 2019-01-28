@@ -1,10 +1,11 @@
 <template>
   <div class="day">
     <div class="dayName">{{ dayMenu.day }}</div>
+    {{dayMenu}}
     <ul>
-      <li>{{ dayMenu.starter }}</li>
-      <li>{{ dayMenu.main }}</li>
-      <li>{{ dayMenu.dessert }}</li>
+      <li>{{ dayMenu.starter.name }}</li>
+      <li>{{ dayMenu.meal.mainCourse.name }}</li>
+      <li>{{ dayMenu.meal.dessert.name }}</li>
     </ul>
   </div>
 </template>

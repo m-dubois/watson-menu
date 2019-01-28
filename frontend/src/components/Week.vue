@@ -2,7 +2,7 @@
   <div class="week">
     <div class="weekDays"/>
     <div class="dayContainer">
-      <day v-for="dayMenu in dayMenus" v-bind:dayMenu="dayMenu" v-bind:key="dayMenu"></day>
+      <day v-for="dayMenu in dayMenus" v-bind:dayMenu="dayMenu" v-bind:key="dayMenu.day"></day>
     </div>
   </div>
 </template>
