@@ -1,5 +1,8 @@
 # Watson Menu
 
+[![Build Status](https://travis-ci.org/m-dubois/watson-menu.svg?branch=master)](https://travis-ci.org/m-dubois/watson-menu)
+
+
 ## Build app
 
 Inside the root directory:
