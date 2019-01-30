@@ -9,7 +9,7 @@ language: java
 jdk: oraclejdk11
 
 node_js:
-  - "6"
+  - "10"
 script:
- - nvm install 6 
+ - nvm install 10
  - cd frontend && npm install && npm test && npm run build
