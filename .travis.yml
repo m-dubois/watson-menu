@@ -13,3 +13,5 @@ node_js:
 script:
  - nvm install 10
  - cd frontend && npm install && npm test && npm run build
+ - cd ../backend && mvn clean install
+ 
