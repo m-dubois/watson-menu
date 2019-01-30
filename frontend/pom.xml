@@ -35,7 +35,31 @@
 							<goal>install-node-and-npm</goal>
 						</goals>
 						<configuration>
-							<nodeVersion>v10.13.0</nodeVersion>
+							<nodeVersion>v10.15.1</nodeVersion>
+							<npmVersion>6.4.1</npmVersion>
+							<nodeDownloadRoot>https://nodejs.org/dist/</nodeDownloadRoot>
+							<npmDownloadRoot>http://registry.npmjs.org/npm/-/</npmDownloadRoot>
+						</configuration>
+					</execution>
+					<!-- Set NPM Registry -->
+					<execution>
+						<id>npm set registry</id>
+						<goals>
+							<goal>npm</goal>
+						</goals>
+						<configuration>
+							<arguments>config set registry https://registry.npmjs.org</arguments>
+						</configuration>
+					</execution>
+					<!-- Set SSL privilege -->
+					<execution>
+						<id>npm set non-strict ssl</id>
+						<goals>
+							<goal>npm</goal>
+						</goals>
+						<!-- Optional configuration which provides for running any npm command -->
+						<configuration>
+							<arguments>config set strict-ssl false</arguments>
 						</configuration>
 					</execution>
 					<!-- Install all project dependencies -->
@@ -61,30 +85,6 @@
 							<arguments>run build</arguments>
             			</configuration>
 					</execution>
-					<!-- Run Unit tests with Jest -->
-					<execution>
-					<id>npm run test:unit</id>
-					<goals>
-						<goal>npm</goal>
-					</goals>
-					<phase>test</phase>
-					<configuration>
-						<arguments>run test:unit</arguments>
-					</configuration>
-					</execution>
-					<!-- Run End2End tests with Nightwatch -->
-					<!--
-					<execution>
-					<id>npm run test:e2e</id>
-					<goals>
-						<goal>npm</goal>
-					</goals>
-					<phase>test</phase>
-					<configuration>
-					  	<arguments>run test:e2e</arguments>
-					</configuration>
-					</execution>
-					-->
 				</executions>
 			</plugin>
 		</plugins>
