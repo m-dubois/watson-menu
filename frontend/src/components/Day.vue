@@ -3,7 +3,7 @@
     <div class="dayName">{{ dayMenu.day }}</div>
     {{dayMenu}}
     <ul>
-      <li>{{ dayMenu.starter.name }}</li>
+      <li>{{ dayMenu.meal.starter.name }}</li>
       <li>{{ dayMenu.meal.mainCourse.name }}</li>
       <li>{{ dayMenu.meal.dessert.name }}</li>
     </ul>

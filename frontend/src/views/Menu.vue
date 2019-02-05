@@ -29,18 +29,28 @@ export default {
       errors: []
     };
   },
+
+  methods:{
+    loadDayData(date) {
+      axios
+        .get('/api/v1/menus?day=' + date)
+        .then(response => {
+          this.dayMenus.push(response.data);
+        })
+        .catch(error => {
+          this.response = "An error occurred. Sorry :(";
+          this.errors.push(error);
+          console.log(error);
+        })
+        .finally(() => (this.loading = false));
+    }
+  },
+
   mounted() {
-    axios
-      .get(`/api/v1/menus?day=2018-12-31`)
-      .then(response => {
-        this.dayMenus = response.data;
-      })
-      .catch(error => {
-        this.response = "An error occurred. Sorry :(";
-        this.errors.push(error);
-        console.log(error);
-      })
-      .finally(() => (this.loading = false));
+    this.loadDayData('2018-12-31');
+    this.loadDayData('2019-01-01');
+    this.loadDayData('2019-01-02');
+    this.loadDayData('2019-01-03');
   }
 };
 </script>

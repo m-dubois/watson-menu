@@ -22,7 +22,7 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 .week {
-  xbackground-color: #bbf;
+  background-color: #bbf;
 }
 .weekDays {
   font-size: 2em;
