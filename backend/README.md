@@ -56,6 +56,11 @@ To launch with postgres:
 mvn -Ppostgres
 ```
 
+```
+mvn spring-boot:run -Dspring-boot.run.profiles=postgres
+```
+
+
 ## Feeding the beast
 
 Adding a menu via the REST API

@@ -4,8 +4,8 @@ spring:
   application:
     name: watson-menu
 
-  profiles:
-    active: @spring.profiles.active@
+#  profiles:
+#    active: @spring.profiles.active@
 
   h2:
     console:
