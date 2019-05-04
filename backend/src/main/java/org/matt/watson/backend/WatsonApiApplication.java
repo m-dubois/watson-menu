@@ -19,11 +19,13 @@ public class WatsonApiApplication {
         for (String name : applicationContext.getBeanDefinitionNames()) {
             if (name.equals("h2Bean") || name.equals("postgresBean")) {
                 System.out.println(name + " = " + applicationContext.getBean(name));
+                LOG.info(name + " = " + applicationContext.getBean(name));
             }
         }
 
         for (String profile : applicationContext.getEnvironment().getActiveProfiles()) {
             System.out.println(profile);
+            LOG.info("profile: "+ profile);
         }
 
     }
