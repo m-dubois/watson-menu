@@ -40,6 +40,24 @@ docker run -it --rm --link watson-menu-psql:postgres postgres psql -h postgres -
 
 password: mysecretpassword
 
+### Update
+
+* Download liquibase: https://download.liquibase.org/
+* Download postgres jdbc driver: https://jdbc.postgresql.org/download.html
+* Copy postgres jdbc jar to {someDir}/liquibase-3.6.3-bin/lib/
+
+* change to `watson-menu/backend/src/main/resources/` directory
+* run the following command:
+
+```
+liquibase \
+    --url=jdbc:postgresql://localhost/watson-menu \
+    --username=postgres \
+    --password=mysecretpassword \
+    --changeLogFile=db/changelog/db.changelog-master.yaml \
+    update
+```
+
 ## Application
 
 ### Start the application
