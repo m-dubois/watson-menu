@@ -1,7 +1,7 @@
 <template>
   <div class="week">
-    <div class="weekDays"/>
-    <div class="dayContainer">
+    <div class="weekDays">weekDays</div>
+    <div class="daysContainer">
       <day v-for="dayMenu in dayMenus" v-bind:dayMenu="dayMenu" v-bind:key="dayMenu.day"></day>
     </div>
   </div>
@@ -28,11 +28,12 @@ export default {
   font-size: 2em;
   font-weight: bold;
 }
-.dayContainer {
-  display: flex;
-  flex-flow: row;
-  list-style-type: none;
-  padding: 0;
-  align-items: stretch;
+
+.daysContainer {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 40px repeat(3, 1fr);
+  grid-column-gap: 20px;
+  grid-auto-flow: column;
 }
 </style>

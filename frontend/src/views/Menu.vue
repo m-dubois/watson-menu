@@ -4,7 +4,6 @@
     <div class="spinnerContainer">
       <Spinner v-if="loading" />
     </div>
-    <h3 v-if="!loading">{{ dayMenus }}</h3>
     <week v-if="!loading" v-bind:dayMenus="dayMenus"/>
   </div>
 </template>

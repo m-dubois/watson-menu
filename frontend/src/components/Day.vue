@@ -1,42 +1,43 @@
 <template>
-  <div class="day">
-    <div class="dayName">{{ dayMenu.day }}</div>
-    {{dayMenu}}
-    <ul>
-      <li>{{ dayMenu.meal.starter.name }}</li>
-      <li>{{ dayMenu.meal.mainCourse.name }}</li>
-      <li>{{ dayMenu.meal.dessert.name }}</li>
-    </ul>
+  <div :class="dayClass(dayMenu)">
+    <div class="dayName">{{ dayMenu.dayOfWeek + ' ' + dayMenu.day }}</div>
+    <div class="course starter">{{ dayMenu.meal.starter.name }}</div>
+    <div class="course main-course">{{ dayMenu.meal.mainCourse.name }}</div>
+    <div class="course dessert">{{ dayMenu.meal.dessert.name }}</div>
   </div>
 </template>
 
 <script>
 export default {
   name: "Day",
-  props: ["dayMenu"]
+  props: ["dayMenu"],
+  methods: {
+    dayClass(dayMenu) {
+      return 'day ' + dayMenu.dayOfWeek;
+    }
+  }
 };
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-.day {
-  xbackground-color: #fbb;
-}
 .dayName {
-  font-size: 2em;
-  font-weight: bold;
+    font-weight: 700;
+    font-size: 1.5em;
+    justify-self: center;
+    align-self: center;
 }
-ul {
-  display: flex;
-  flex-flow: column;
-  list-style-type: none;
-  padding: 0;
-  align-items: stretch;
+.day {
+    display: contents;
 }
-li {
-  flex-grow: 300px;
-  padding: 30px;
-  border: 1px solid #222;
-  margin: 10px;
+.Lundi, .Mardi, .Jeudi, .Vendredi {
+    grid-row: 1 / span 4;
 }
+.course {
+    margin: 5px;
+}
+.starter { background-color: blueviolet; }
+.main-course { background-color: brown; }
+.dessert { background-color: coral; }
+
 </style>
