@@ -10,7 +10,7 @@ COPY frontend ./frontend
 RUN mkdir /backend
 COPY backend ./backend
 
-RUN mvn install
+RUN mvn clean install -Dspring-boot.run.profiles=postgres -Dmaven.test.skip=true
 
 # ----
 
@@ -19,4 +19,5 @@ VOLUME /tmp
 COPY --from=build /app/backend/target/backend*.jar app.jar
 EXPOSE 8088
 RUN bash -c 'touch /app.jar'
-ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","/app.jar"]
+ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-Dspring.profiles.active=postgres", "-jar","/app.jar"]
+#CMD ["--spring-boot.run.profiles=postgres"]
