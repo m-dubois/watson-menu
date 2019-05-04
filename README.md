@@ -3,7 +3,7 @@
 [![Build Status](https://travis-ci.org/m-dubois/watson-menu.svg?branch=master)](https://travis-ci.org/m-dubois/watson-menu)
 
 
-## Build app
+## Build the app
 
 Inside the root directory:
 
@@ -11,7 +11,15 @@ Inside the root directory:
 mvn clean install
 ```
 
+### Build Docker image
+
+```
+docker image build -t watson-menu .
+```
+
 ## Run app
+
+### Default
 
 Run the complete Spring Boot App:
 
@@ -19,7 +27,9 @@ Run the complete Spring Boot App:
 mvn --projects backend spring-boot:run
 ```
 
-or with options for intellij remote debugging:
+### With Intellij Remote Debugging
+
+With options for intellij remote debugging:
 
 ```
 mvn --projects backend spring-boot:run -Dspring-boot.run.jvmArguments="-Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=y,address=5005"
@@ -27,6 +37,13 @@ mvn --projects backend spring-boot:run -Dspring-boot.run.jvmArguments="-Xdebug -
 
 (and launching remote debugging in intellij of course :P)
 
+### Changing the default Spring profile
+
+Launching the app with postgres profile:
+
+```
+mvn -Dspring-boot.run.profiles=postgres --projects backend spring-boot:run
+```
 
 ## Browsing app
 
