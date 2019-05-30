@@ -2,7 +2,7 @@
 spring:
   datasource:
       name: postgres-db
-      url: jdbc:postgresql://localhost/watson-menu
+      url: ${DATABASE_URL:jdbc:postgresql://localhost/watson-menu}
       username: postgres
       password: mysecretpassword
       driver-class-name: org.postgresql.Driver
